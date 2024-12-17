@@ -1,9 +1,13 @@
-import Dashboard from "./Component/Dashboard"
-import './App.css'
+import Dashboard from "./Component/Dashboard";
+import "./App.css";
+import { NavBar } from "./Component/NavBar";
 const App = () => {
-  return(
-    <Dashboard/>
-  )
-}
+  return (
+    <>
+      <NavBar />
+      <Dashboard />
+    </>
+  );
+};
 
 export default App;

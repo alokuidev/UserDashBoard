@@ -1,14 +1,13 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Body Styling */
 body {
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
   color: #333;
   line-height: 1.6;
   display: flex;
@@ -17,19 +16,27 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
-
+#root{
+  width: 1000px;
+}
 /* Header */
 header {
-  background-color: #f1f1f1;
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0078ff;
   margin-bottom: 5px;
-  font-size: 2.2rem;
+}
+
+header p {
+  font-size: 1rem;
   color: #555;
 }
 
@@ -38,23 +45,24 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  background-color: #0078ff;
+  background: #0078ff;
   padding: 10px 0;
-  width: 100%;
+  margin-bottom: 20px;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #ffdd57;
 }
 
 /* Main Content */
@@ -62,39 +70,46 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
   width: 100%;
 }
 
 .user-table {
-  width: 60%;
-  background-color: #fff;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
   text-align: left;
-  margin: 0 auto;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
   margin-bottom: 15px;
-  color: #444;
+  color: #0078ff;
   text-align: center;
 }
 
 .add-user-btn, .clear-all-btn {
-  background-color: #0078ff;
-  color: #fff;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
   border: none;
-  padding: 8px 12px;
+  padding: 10px 15px;
   cursor: pointer;
   margin-bottom: 15px;
-  border-radius: 3px;
+  border-radius: 20px;
   font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top:30px;
 }
 
 .add-user-btn:hover, .clear-all-btn:hover {
-  background-color: #005bb5;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .user-list {
@@ -106,20 +121,32 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 15px;
   border-bottom: 1px solid #ddd;
   font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-list li:nth-child(even) {
+  background: #f7f7f7;
+}
+
+.user-list li:hover {
+  background: #e6f7ff;
+  transform: translateX(5px);
 }
 
 .delete-btn {
-  background-color: red;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .delete-btn:hover {
-  background-color: darkred;
+  background: #e60023;
+  transform: scale(1.1);
 }
