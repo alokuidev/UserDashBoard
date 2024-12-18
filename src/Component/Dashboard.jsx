@@ -1,17 +1,23 @@
 import React from "react";
 import { fakeUserData } from "../Api";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../Action/Store/UserSlice";
+import { addUser,removeUser } from "../Action/Store/UserSlice";
 const Dashboard = () => {
 
   const disptach = useDispatch();
   const data = useSelector((state) =>{
       return state.users;
   });
-  console.log(data);
+
+  //
+  
   const addNewUser = (payload) =>{
     //console.log(payload)
     disptach(addUser(payload))
+  }
+
+  const deleteUser = (index) =>{
+    disptach(removeUser(index))
   }
   return (
     <>
@@ -26,7 +32,7 @@ const Dashboard = () => {
             {data.map((currElem,index) =>(
             <li key={index}>
               {currElem}
-              <button className="delete-btn">&#x1F5D1;</button>
+              <button className="delete-btn" onClick={() => deleteUser(index)}>&#x1F5D1;</button>
             </li>
             ))}
           </ul>
