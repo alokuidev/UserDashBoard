@@ -6,6 +6,7 @@ const userSlice = createSlice({
     reducers:{
         addUser(state, action){
             // Implement logic to add a user
+            state.push(action.payload)
         },
         removeUser(state,action){
             // Implement logic to remove a user
@@ -20,3 +21,4 @@ const userSlice = createSlice({
 
 
 export default userSlice.reducer;
+export const {addUser} = userSlice.actions;
