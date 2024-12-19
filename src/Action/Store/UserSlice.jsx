@@ -14,6 +14,7 @@ const userSlice = createSlice({
         },
         deleteUsers(state,action){
             // Implement logic to delete a user
+            state.splice(0, state.length);
         }
 
     }
@@ -22,4 +23,4 @@ const userSlice = createSlice({
 
 
 export default userSlice.reducer;
-export const {addUser,removeUser} = userSlice.actions;
+export const {addUser,removeUser,deleteUsers} = userSlice.actions;

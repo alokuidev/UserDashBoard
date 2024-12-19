@@ -1,7 +1,7 @@
 import React from "react";
 import { fakeUserData } from "../Api";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser,removeUser } from "../Action/Store/UserSlice";
+import { addUser,deleteUsers,removeUser } from "../Action/Store/UserSlice";
 const Dashboard = () => {
 
   const disptach = useDispatch();
@@ -18,6 +18,9 @@ const Dashboard = () => {
 
   const deleteUser = (index) =>{
     disptach(removeUser(index))
+  }
+  const deleteAllUsers = () =>{
+    disptach(deleteUsers())
   }
   return (
     <>
@@ -38,7 +41,7 @@ const Dashboard = () => {
           </ul>
 
           {/* <!-- Clear All Button --> */}
-          <button className="clear-all-btn">Clear All Users</button>
+          <button className="clear-all-btn" onClick={deleteAllUsers}>Clear All Users</button>
         </div>
       </main>
     </>
